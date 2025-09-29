@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para la mami más bella 🌹</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #fff0f5, #ffe4e1, #fffacd);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      overflow: hidden;
+    }
+
+    h1 {
+      position: absolute;
+      top: 30px;
+      text-align: center;
+      width: 100%;
+      font-size: 2.5rem;
+      color: #d63384;
+      text-shadow: 2px 2px 5px #fff;
+      animation: floatText 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatText {
+      from { transform: translateY(0); }
+      to { transform: translateY(10px); }
+    }
+
+    .garden {
+      display: flex;
+      gap: 40px;
+    }
+
+    /* Tulipán */
+    .tulip {
+      position: relative;
+      width: 40px;
+      height: 100px;
+    }
+
+    .stem {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 6px;
+      height: 100px;
+      background: green;
+      transform: translateX(-50%);
+    }
+
+    .flower {
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      width: 60px;
+      height: 60px;
+      background: pink;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      transform: translateX(-50%);
+      animation: sway 3s ease-in-out infinite;
+    }
+
+    .flower.red { background: #ff4d6d; }
+    .flower.yellow { background: #ffd700; }
+    .flower.purple { background: #ba55d3; }
+
+    @keyframes sway {
+      0% { transform: translateX(-50%) rotate(0deg); }
+      50% { transform: translateX(-50%) rotate(5deg); }
+      100% { transform: translateX(-50%) rotate(-5deg); }
+    }
+
+    /* Corazones flotando */
+    .heart {
+      position: absolute;
+      bottom: 0;
+      width: 20px;
+      height: 20px;
+      background: #ff6b81;
+      transform: rotate(45deg);
+      animation: floatUp 6s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff6b81;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(0) rotate(45deg); opacity: 1; }
+      to { transform: translateY(-100vh) rotate(45deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🌷 Para la mami más bella 🌹</h1>
+
+  <div class="garden">
+    <div class="tulip">
+      <div class="stem"></div>
+      <div class="flower red"></div>
+    </div>
+    <div class="tulip">
+      <div class="stem"></div>
+      <div class="flower yellow"></div>
+    </div>
+    <div class="tulip">
+      <div class="stem"></div>
+      <div class="flower purple"></div>
+    </div>
+  </div>
+
+  <!-- corazones flotando -->
+  <div class="heart" style="left:20%; animation-delay:0s;"></div>
+  <div class="heart" style="left:40%; animation-delay:2s;"></div>
+  <div class="heart" style="left:60%; animation-delay:4s;"></div>
+  <div class="heart" style="left:80%; animation-delay:1s;"></div>
+</body>
+</html>
